@@ -19,3 +19,33 @@ function showSumPrice(price, amountNumber) {
         showAmount.innerHTML = amount;
     }
 }
+
+// child element
+
+let helpText = document.createElement("small");
+helpText.className = "form-text text-muted";
+helpText.innerHTML = "Adja meg a feltéteket";
+
+let parent = document.querySelector("div.form-group:nth-child(1)");
+parent.appendChild(helpText);
+
+parent.removeChild(helpText);
+
+
+// windows event onclick
+
+
+/* 
+let sendButton = document.querySelector("form .btn.btn-primary");
+sendButton.onclick = function() {
+    alert("Helloka");
+}
+*/
+let sendButton = document.querySelector("form .btn.btn-primary");
+sendButton.addEventListener("click", function () {
+    alert("Helloka");
+});
+
+window.addEventListener("resize", function() {
+    console.log(this.innerHeight, this.innerWidth);
+});
